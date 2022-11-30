@@ -20,24 +20,28 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'TODOs List'
+        title: 'Jate'
       }),
       new WebpackPwaManifest({
-        "name": "Text Editor",
-        "orientation": "portrait",
-        "display": "standalone",
-        "start_url": "./",
-        "short_name": "Editor",
-        "description": "PWA Text Editor that uses indexedDB.",
-        "background_color": "#7eb4e2",
+        name: "Just Another Text Editor",
+        orientation: "portrait",
+        display: "standalone",
+        start_url: "./",
+        inject: true,
+        fingerprint: false,
+        short_name: "Jate",
+        description: "PWA Text Editor that uses indexedDB.",
+        background_color: "#7eb4e2",
+        start_url: "./",
+        theme_color: "#7eb4e2",
         icons: [
           {
             src: path.resolve("./src/images/logo.png"),
-            size: [96, 128, 192, 512],
+            size: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons')
           }
         ],
-        start_url: "./",
-        theme_color: "#7eb4e2"
+
 
       }),
     ],
